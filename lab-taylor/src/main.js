@@ -76,7 +76,7 @@ class SearchResultList extends React.Component {
               {this.props.topics.data.children.map((item, i) => {
                 return (
                   <li key={i}>
-                    <a href={item.data.url}>{item.data.title}</a>
+                    <a href={item.data.url} target="_blank">{item.data.title}</a>
                     <p>{item.data.ups} upvotes</p>
                   </li>
                 );
