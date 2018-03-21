@@ -33,7 +33,7 @@ class SearchForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.update_state(this.state.subForm, this.state.numForm);
+    this.props.lastSearch(this.state.subForm, this.state.numForm);
   }
 
   render() {
@@ -73,11 +73,11 @@ class SearchResultList extends React.Component {
         {this.props.topics ? 
           <section>
             <ul>
-              {this.props.topics.data.children.map((post, i) => {
+              {this.props.topics.data.children.map((item, i) => {
                 return (
                   <li key={i}>
-                    <a href={post.data.url}>{post.data.title}</a>
-                    <p>{post.data.ups} upvotes</p>
+                    <a href={item.data.url}>{item.data.title}</a>
+                    <p>{item.data.ups} upvotes</p>
                   </li>
                 );
               })}
@@ -134,7 +134,7 @@ class App extends React.Component {
     return (
       <section>
         <h1>Subreddit Search</h1>
-        <SearchForm update_state={this.updateState}/>
+        <SearchForm lastSearch={this.updateState}/>
         <SearchResultList topics={this.state.topics} error={this.state.error}/>
       </section>
     );
