@@ -1,6 +1,7 @@
 body {
   background-color: #999999;
-  font-family: Helvetica
+  font-family: Helvetica;
+  
 }
 
 form label,input,button{
@@ -11,5 +12,11 @@ form label,input,button{
 
 li {
   list-style: square
+}
+
+a {
+  text-decoration: none;
+  font-style: bold
+  
 }
 
